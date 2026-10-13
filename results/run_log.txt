@@ -1,0 +1,24 @@
+Secure-transmission probability of each tag (unknown to the learner):
+  eavesdropper position 1: [0.671 0.863 0.388 0.445 0.417] -> best tag 2
+  eavesdropper position 2: [0.671 0.257 0.93  0.445 0.417] -> best tag 3
+
+Simulated 2 scenarios x 10000 slots x 200 runs in 14 s
+
+Secrecy outage probability (lower is better):
+                                  Scheme  SOP static (last 2000 slots)  SOP moving eve (2000 slots before move)  SOP moving eve (first 1000 slots AFTER move)  SOP moving eve (last 2000 slots)
+      Genie OTS (instantaneous full CSI)                         0.009                                    0.009                                         0.006                             0.006
+Oracle best fixed tag (knows statistics)                         0.137                                    0.136                                         0.069                             0.070
+                  Epsilon-greedy (ε=0.1)                         0.168                                    0.167                                         0.715                             0.322
+                                    UCB1                         0.141                                    0.146                                         0.105                             0.070
+                       Thompson Sampling                         0.137                                    0.137                                         0.694                             0.071
+           Discounted Thompson (γ=0.995)                         0.171                                    0.170                                         0.127                             0.093
+                   SOTS (main link only)                         0.271                                    0.273                                         0.168                             0.169
+                              Random tag                         0.444                                    0.444                                         0.457                             0.457
+
+Cumulative regret after all slots (static eavesdropper, lower is better):
+  Epsilon-greedy (ε=0.1)          :   318.9 lost secure transmissions
+  UCB1                            :   166.6 lost secure transmissions
+  Thompson Sampling               :    23.6 lost secure transmissions
+  Discounted Thompson (γ=0.995)   :   347.4 lost secure transmissions
+
+All results saved in the 'results' folder.
